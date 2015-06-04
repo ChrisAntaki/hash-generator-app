@@ -8,4 +8,4 @@ npm install electron-prebuilt -g
 electron .
 ```
 
-Note: Soon, this will be distributed to a number of organizations. Please don't distribute it ahead of time, as it's not fully QA'ed. Thanks!
+Note: Soon, this will be distributed to a number of non-profit organizations. Please don't distribute it ahead of time, as it's not fully QA'ed. Thanks!
