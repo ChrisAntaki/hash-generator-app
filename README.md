@@ -4,6 +4,6 @@
 # First, make sure Electron is installed
 npm install electron-prebuilt -g
 
-# Start the app
+# Start the app!
 electron .
 ```
