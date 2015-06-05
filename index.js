@@ -67,7 +67,8 @@ app.on('ready', function() {
                     return crypto
                         .createHash('md5')
                         .update(line)
-                        .digest('hex');
+                        .digest('hex')
+                        .toUpperCase();
                 });
 
             var newPath = paths[0] + '.hashed.csv';
