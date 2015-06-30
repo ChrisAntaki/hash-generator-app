@@ -1,6 +1,7 @@
 ### Downloading the app
 
 [Mac OS](https://www.dropbox.com/s/c226dqqymphgdbe/Hash%20Generator.zip?dl=0)
+
 (Windows version is on the way)
 
 ### Running from source
