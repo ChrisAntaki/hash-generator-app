@@ -4,7 +4,9 @@
 
 [Windows version](https://www.dropbox.com/s/zwb3ahfuh3xipw8/Hash%20Generator%20-%20Win64.zip?dl=0)
 
-### Running from source
+### Downloading the source
+
+If you'd like to download the source code instead, clone this repository. Then make sure Node.js is installed, and run the following commands.
 
 ```sh
 # First, make sure Electron is installed.
