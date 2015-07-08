@@ -62,13 +62,12 @@ app.on('ready', function() {
                 .map(function(line) {
                     line = line
                         .trim()
-                        .toLowerCase();
+                        .toUpperCase();
 
                     return crypto
                         .createHash('md5')
                         .update(line)
-                        .digest('hex')
-                        .toUpperCase();
+                        .digest('hex');
                 });
 
             var newPath = paths[0] + '.hashed.csv';
