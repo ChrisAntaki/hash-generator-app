@@ -58,6 +58,8 @@ app.on('ready', function() {
         setTimeout(function() {
             var lines =
                 fs.readFileSync(paths[0], 'utf-8')
+                .replace(/\r/g, '\n')
+                .replace(/\n\n/g, '\n')
                 .split('\n')
                 .map(function(line) {
                     line = line
@@ -75,8 +77,6 @@ app.on('ready', function() {
                 e.sender.send('Change phase', 'goodbye');
 
                 shell.showItemInFolder(newPath);
-
-                setTimeout(process.exit, 5000);
             });
 
         }, 500);

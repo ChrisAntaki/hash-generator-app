@@ -19,12 +19,20 @@ $('a.next', function() {
     }, false);
 });
 
-ipc.on('Change phase', function(arg) {
+$('a.another', function() {
+    this.addEventListener('click', function(e) {
+        changePhase('hello');
+    }, false);
+});
+
+ipc.on('Change phase', changePhase);
+
+function changePhase(phase) {
     $('.phase', function() {
         this.style.display = 'none';
     });
 
-    $('.phase-' + arg, function() {
+    $('.phase-' + phase, function() {
         this.style.display = 'block';
     });
-});
+}

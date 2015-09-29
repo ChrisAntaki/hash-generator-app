@@ -50,7 +50,7 @@ body {
     margin: 48px;
     text-align: center;
     -webkit-font-smoothing: antialiased;
-    
+
     cursor: default;
     -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -78,7 +78,7 @@ header h3 {
 
 a.next {
     background-color: #2ad352;
-    
+
     border-radius: 8px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     color: #fff;
@@ -95,7 +95,7 @@ a.next {
 }
 
 a.next:hover {
-    background-color: #3ae563;
+    background-color: #13c33d;
 }
 
 .success {
@@ -103,9 +103,17 @@ a.next:hover {
     font-size: 2.2em;
 }
 
-.heads-up {
-    color: #999;
+.heads-up a {
+    color: #008ba9;
     font-size: 1.2em;
+    font-weight: bold;
+
+    -webkit-transition: color 0.3s;
+            transition: color 0.3s;
+}
+
+.heads-up a:hover {
+    color: #04768f;
 }
 
 .please-wait {
