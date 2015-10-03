@@ -60,6 +60,7 @@ app.on('ready', function() {
         setTimeout(function() {
             var lines =
                 fs.readFileSync(paths[0], 'utf-8')
+                .replace(/"/g, '')
                 .replace(/\r/g, '\n')
                 .replace(/\n\n/g, '\n')
                 .split('\n')
