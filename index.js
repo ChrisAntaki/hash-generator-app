@@ -29,6 +29,8 @@ app.on('ready', function() {
         'width': 800,
     });
 
+    mainWindow.setMenu(null);
+
     // and load the index.html of the app.
     mainWindow.loadUrl('file://' + __dirname + '/public/index.html');
 
