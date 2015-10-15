@@ -1,17 +1,19 @@
-var app = require('app'); // Module to control application life.
-var BrowserWindow = require('browser-window'); // Module to create native browser window.
-var crypto = require('crypto');
-var dialog = require('dialog');
-var fs = require('fs');
-var ipc = require('ipc');
-var shell = require('shell');
+'use strict';
+
+const app = require('app'); // Module to control application life.
+const BrowserWindow = require('browser-window'); // Module to create native browser window.
+const crypto = require('crypto');
+const dialog = require('dialog');
+const fs = require('fs');
+const ipc = require('ipc');
+const shell = require('shell');
 
 // // Report crashes to our server.
 // require('crash-reporter').start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
-var mainWindow = null;
+let mainWindow = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -46,7 +48,7 @@ app.on('ready', function() {
     });
 
     ipc.on('Select source file', function(e, arg) {
-        var paths = dialog.showOpenDialog({
+        let paths = dialog.showOpenDialog({
             title: 'Choose a list',
             properties: ['openFile']
         });
@@ -58,8 +60,19 @@ app.on('ready', function() {
         e.sender.send('Change phase', 'wait');
 
         setTimeout(function() {
-            var lines =
-                fs.readFileSync(paths[0], 'utf-8')
+            let data = fs.readFileSync(paths[0], 'utf-8');
+
+            if (/,/.test(data)) {
+                e.sender.send('Change phase', 'hello');
+                e.sender.send('Alert',
+`Oh no! In order to run properly, this application needs a CSV with only the email column.
+Please remove every other column and try again.`
+                );
+                return;
+            }
+
+            let lines =
+                data
                 .replace(/"/g, '')
                 .replace(/\r/g, '\n')
                 .replace(/\n\n/g, '\n')
@@ -75,7 +88,7 @@ app.on('ready', function() {
                         .digest('hex');
                 });
 
-            var newPath = paths[0] + '.hashed.csv';
+            let newPath = paths[0] + '.hashed.csv';
             fs.writeFile(newPath, lines.join('\n'), function() {
                 e.sender.send('Change phase', 'goodbye');
 
