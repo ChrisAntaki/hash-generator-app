@@ -1,6 +1,6 @@
 ### Downloading the app
 
-[Newest releases, free and open source](https://github.com/ChrisAntaki/hash-generator-app/releases)
+[Click here for the newest free and open-source release](https://github.com/ChrisAntaki/hash-generator-app/releases)
 
 ### For developers
 
